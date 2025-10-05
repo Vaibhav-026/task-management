@@ -1,7 +1,6 @@
 from rest_framework.test import APITestCase
 from rest_framework import status
 from django.urls import reverse
-# from django.contrib.auth.models import User
 from users.models import TaskApplicationUser as User
 from rest_framework_simplejwt.tokens import RefreshToken
 from .models import TaskDetails
@@ -14,7 +13,7 @@ class TaskManagerTests(APITestCase):
 
     def setUp(self):
         self.admin_user = User.objects.create_superuser(
-            username="admin", password="adminpass"
+            username="admin", password="adminpass", is_admin=True
         )
         self.regular_user = User.objects.create_user(
             username="user", password="userpass"
@@ -40,8 +39,6 @@ class TaskManagerTests(APITestCase):
         self.assertEqual(response.status_code, status.HTTP_401_UNAUTHORIZED)
 
     def test_unauthenticated_user_cannot_delete_task(self):
-        token = get_token_for_user(self.regular_user)
-        self.client.credentials(HTTP_AUTHORIZATION=f"Bearer {token}")
         response = self.client.delete(self.detail_url)
         self.assertEqual(response.status_code, status.HTTP_401_UNAUTHORIZED)
 
