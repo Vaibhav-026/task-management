@@ -25,7 +25,7 @@ This API allows users to register, authenticate, and manage their daily tasks ef
 
 ---
 
-## ⚙️ Installation & Setup
+##  Installation & Setup
 
 Follow these steps to set up the project locally:
 
@@ -58,7 +58,7 @@ python manage.py runserver
 
 The API will now be available at:http://127.0.0.1:8000/
 
-🔑 Authentication (JWT)
+### Authentication (JWT)
 
 This project uses JWT authentication provided by SimpleJWT.
 
@@ -68,7 +68,7 @@ POST	         /api/token/	              Obtain JWT access & refresh token
 POST	        /api/token/refresh/	        Refresh access token
 
 
-🧾 Task Endpoints
+### Task Endpoints
 
 Method	      Endpoint	              Description
 GET	          /api/tasks/	            List all tasks (for logged-in user)
@@ -77,7 +77,7 @@ GET	          /api/tasks/<id>/	      Retrieve a specific task
 PUT	          /api/tasks/<id>/	      Update a task
 DELETE	      /api/tasks/<id>/	      Delete a task
 
-1-Register API curl
+ 1-Register API curl
     curl --location 'http://127.0.0.1:8000/api/users/register/' \
 --header 'Content-Type: application/json' \
 --data-raw '{
@@ -105,6 +105,7 @@ Response-{
     "username": "testusernonadmin",
     "password": "TestAdmin123"
 }'
+
 Response-{
     "refresh": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc1OTcyMTQ1MCwiaWF0IjoxNzU5NjM1MDUwLCJqdGkiOiJiYzI1ZTA1NjUyYjM0YmE1OWQ1ZThjNWYwMzllNGM5ZSIsInVzZXJfaWQiOiI1In0.fLCzvYAwuICfCCAVK7OvvQXMAE2YJ7ytnZRE4-bk8AE",
     "access": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzU5NjM4NjUwLCJpYXQiOjE3NTk2MzUwNTAsImp0aSI6IjI1MzA2NTkxOTQ3MjRkYjJhNGMyOWE0NzI3N2FmZGQ2IiwidXNlcl9pZCI6IjUifQ.DXCDm9Pvka9XKjrpWEXu8o8TcPoSnqpbHq53BUh4MsA"
@@ -119,6 +120,7 @@ curl --location 'http://127.0.0.1:8000/api/task/' \
 "title": "Hello welcom to Youtube",
 "description": "Youtube is owned by Google"
 }'
+
 Response-{{
     "id": 8,
     "title": "Hello welcom to Youtube",
@@ -198,6 +200,7 @@ Response-{
     "created_at": "2025-10-05T03:46:25.072659Z",
     "updated_at": "2025-10-03T14:09:11.991366Z"
 }
+
 6- Delete Task Viewset
 curl --location --request DELETE 'http://127.0.0.1:8000/api/task/1/' \
 --header 'Content-Type: application/json' \
@@ -325,15 +328,14 @@ Example Task Object:
 }
 
 
-Filtering & Ordering
-
+### Filtering & Ordering
 Filtering: You can filter tasks by fields such as status, priority, and date.
 Ordering: Use query params like ?ordering=date or ?ordering=-date to sort tasks ascending/descending.
 
 Example:
 GET /api/tasks/?status=completed&ordering=-date
 
-Project Structure
+### Project Structure
 
 task_management/
 │
@@ -356,23 +358,23 @@ task_management/
 ├── requirements.txt
 └── manage.py
 
-Future Enhancements
-  Add due date reminders via email
-  Add task categories and tags
-  Dashboard for task analytics
-  Deploy using Docker and Render/AWS
+### Future Enhancements
+  - Add due date reminders via email
+  - Add task categories and tags
+  - Dashboard for task analytics
+  - Deploy using Docker and Render/AWS
 
-Contributing:Contributions are always welcome!
+### Contributing:Contributions are always welcome!
 To contribute:
-  Fork this repository
-  Create a new branch (feature/your-feature-name)
-  Commit your changes
-  Push to your branch and open a pull request
+  - Fork this repository
+  - Create a new branch (feature/your-feature-name)
+  - Commit your changes
+  - Push to your branch and open a pull request
 
-License
+### License
 This project is licensed under the MIT License
 
-Author
+** Author **
 Vaibhav Anand
 GitHub Profile
 
