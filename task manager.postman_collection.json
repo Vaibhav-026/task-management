@@ -1,0 +1,364 @@
+{
+	"info": {
+		"_postman_id": "24def440-b523-4f94-89b4-59e39eecadf8",
+		"name": "task manager",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "48735963",
+		"_collection_link": "https://vaibhavanand-rose-6472747.postman.co/workspace/VAIBHAV-ANAND's-Workspace~a56701c2-35e5-4a61-896a-4f2621447b4f/collection/48735963-24def440-b523-4f94-89b4-59e39eecadf8?action=share&source=collection_link&creator=48735963"
+	},
+	"item": [
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"vaibhaanand\",\n    \"password\": \"Vaibhav@123\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/users/login/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"users",
+						"login",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"first_name\": \"Test\",\n    \"last_name\": \"Admin\",\n    \"username\": \"testuser\",\n    \"email\": \"test@user.com\",\n    \"password\": \"TestAdmin123\",\n    \"confirm_password\": \"TestAdmin123\",\n    \"is_admin\": true\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/users/register/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"users",
+						"register",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "list task viewset",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "add task viewset",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"title\": \"This is second task title\",\n\"description\": \"This is second task descriptopm\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/task/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"task",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "edit task viewset",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"title\": \"This is second task title\",\n\"description\": \"This is second task descriptopm\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/task/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"task",
+						""
+					]
+				},
+				"description": "Generated from cURL: curl --location 'http://127.0.0.1:8000/api/task/' \\\n--header 'Content-Type: application/json' \\\n--data '{\n\"title\": \"This is second task title\",\n\"description\": \"This is second task descriptopm\"\n}'"
+			},
+			"response": []
+		},
+		{
+			"name": "delet task viewset",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzU5NTAwNjIzLCJpYXQiOjE3NTk1MDAzMjMsImp0aSI6ImNjMDIwOTgxOTM5MzQzMjRhYjczMWE1YzBjZDg2Mzg5IiwidXNlcl9pZCI6IjQifQ.Oo56QdE32OPUgbPZX1hsc-vF4V7mDlamYwDchcG-fiM",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"title\": \"This is second task title\",\n\"description\": \"This is second task descriptopm\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/task/1/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"task",
+						"1",
+						""
+					]
+				},
+				"description": "Generated from cURL: curl --location 'http://127.0.0.1:8000/api/task/' \\\n--header 'Content-Type: application/json' \\\n--data '{\n\"title\": \"This is second task title\",\n\"description\": \"This is second task descriptopm\"\n}'"
+			},
+			"response": []
+		},
+		{
+			"name": "list task custom",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/task-custom?title='tiktok'",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"task-custom"
+					],
+					"query": [
+						{
+							"key": "title",
+							"value": "'tiktok'"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add task custom",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzU5NTAxODk2LCJpYXQiOjE3NTk1MDE1OTYsImp0aSI6ImEzN2FlOWM1MWI2YzQ5ZGQ5ZGNjYWVjZjFlNTE0Yjc3IiwidXNlcl9pZCI6IjQifQ.9J_WQzz1H3EQswALq1utEockXL_CL-23k3I4B-55vN4"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"title\": \"Hello welcom to Youtube\",\n\"description\": \"Youtube is owned by Google\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/task/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"task",
+						""
+					]
+				},
+				"description": "Generated from cURL: curl --location 'http://127.0.0.1:8000/api/task/' \\\n--header 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzU5NTAxODk2LCJpYXQiOjE3NTk1MDE1OTYsImp0aSI6ImEzN2FlOWM1MWI2YzQ5ZGQ5ZGNjYWVjZjFlNTE0Yjc3IiwidXNlcl9pZCI6IjQifQ.9J_WQzz1H3EQswALq1utEockXL_CL-23k3I4B-55vN4' \\\n--header 'Content-Type: application/json' \\\n--data '{\n\"title\": \"Hello welcom to Youtube\",\n\"description\": \"Youtube is owned by Google\"\n}'"
+			},
+			"response": []
+		},
+		{
+			"name": "edit task custom",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzU5NTA2NzE4LCJpYXQiOjE3NTk1MDMxMTgsImp0aSI6ImIxODA3ZDU0MzI3NTQxZDBiOWY3YzBiYzhlODQyNzViIiwidXNlcl9pZCI6IjQifQ.qxqdf0gkUdTBcLGQdv8zNjMx6-TtJCnrrRk81KfOovI"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"title\": \"This is third task edited title again\",\n\"description\": \"This is third task description again\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/task-custom/3/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"task-custom",
+						"3",
+						""
+					]
+				},
+				"description": "Generated from cURL: curl --location --request PUT 'http://127.0.0.1:8000/api/task/3/' \\\n--header 'Content-Type: application/json' \\\n--header 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzU5NTAwNjIzLCJpYXQiOjE3NTk1MDAzMjMsImp0aSI6ImNjMDIwOTgxOTM5MzQzMjRhYjczMWE1YzBjZDg2Mzg5IiwidXNlcl9pZCI6IjQifQ.Oo56QdE32OPUgbPZX1hsc-vF4V7mDlamYwDchcG-fiM' \\\n--data '{\n\"title\": \"This is third task edited title\",\n\"description\": \"This is third task descriptopm\"\n}'"
+			},
+			"response": []
+		},
+		{
+			"name": "delete task custom",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzU5NTA2NzE4LCJpYXQiOjE3NTk1MDMxMTgsImp0aSI6ImIxODA3ZDU0MzI3NTQxZDBiOWY3YzBiYzhlODQyNzViIiwidXNlcl9pZCI6IjQifQ.qxqdf0gkUdTBcLGQdv8zNjMx6-TtJCnrrRk81KfOovI"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"title\": \"This is third task edited title again\",\n\"description\": \"This is third task description again\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/task-custom/3/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"task-custom",
+						"3",
+						""
+					]
+				},
+				"description": "Generated from cURL: curl --location --request PUT 'http://127.0.0.1:8000/api/task-custom/3/' \\\n--header 'Content-Type: application/json' \\\n--header 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzU5NTA2NzE4LCJpYXQiOjE3NTk1MDMxMTgsImp0aSI6ImIxODA3ZDU0MzI3NTQxZDBiOWY3YzBiYzhlODQyNzViIiwidXNlcl9pZCI6IjQifQ.qxqdf0gkUdTBcLGQdv8zNjMx6-TtJCnrrRk81KfOovI' \\\n--data '{\n\"title\": \"This is third task edited title again\",\n\"description\": \"This is third task description again\"\n}'"
+			},
+			"response": []
+		}
+	]
+}
