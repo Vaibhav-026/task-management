@@ -3,7 +3,13 @@
 A fully functional **Task Management System** built with **Django Rest Framework (DRF)**.  
 This API allows users to register, authenticate, and manage their daily tasks efficiently with features like filtering, ordering, and pagination.
 
----
+
+### Design Choices
+Since the requirements did not specify which approach to use, I have implemented both ModelViewSet and custom API views:
+- *ModelViewSet*: Provides a concise and fast way to implement standard CRUD operations.
+- *Custom API views*: Allow more flexibility and fine-grained control over business logic, such as filtering and custom responses.
+
+
 
 ## Features
 
