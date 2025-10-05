@@ -68,6 +68,13 @@ POST	         /api/token/	              Obtain JWT access & refresh token
 POST	        /api/token/refresh/	        Refresh access token
 
 
+
+### ModelViewSet-based Endpoints
+These endpoints are implemented using Django REST Framework's ModelViewSet class. 
+They provide automatic CRUD operations (list, create, retrieve, update, delete) 
+with minimal code. Suitable for standard RESTful behavior where default DRF features are enough.
+
+
 ### Task Endpoints
 
 Method	      Endpoint	              Description
@@ -112,7 +119,7 @@ Response-{
 }
 
 
-3-Add Task Viewset
+3-Add Task Viewset API
 curl --location 'http://127.0.0.1:8000/api/task/' \
 --header 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzU5NjM4NjUwLCJpYXQiOjE3NTk2MzUwNTAsImp0aSI6IjI1MzA2NTkxOTQ3MjRkYjJhNGMyOWE0NzI3N2FmZGQ2IiwidXNlcl9pZCI6IjUifQ.DXCDm9Pvka9XKjrpWEXu8o8TcPoSnqpbHq53BUh4MsA' \
 --header 'Content-Type: application/json' \
@@ -130,7 +137,7 @@ Response-{{
     "updated_at": "2025-10-05T03:41:21.655263Z"
 }
 
-4-List Task View
+4-List Task View API
 curl --location 'http://127.0.0.1:8000/api/task/'
 Response-{
     "count": 5,
@@ -183,7 +190,7 @@ Response-{
 
 
 
-5-Edit Task Viewset
+5-Edit Task Viewset API
 curl --location --request PUT 'http://127.0.0.1:8000/api/task/5/' \
 --header 'Content-Type: application/json' \
 --header 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzU5NjM4NjUwLCJpYXQiOjE3NTk2MzUwNTAsImp0aSI6IjI1MzA2NTkxOTQ3MjRkYjJhNGMyOWE0NzI3N2FmZGQ2IiwidXNlcl9pZCI6IjUifQ.DXCDm9Pvka9XKjrpWEXu8o8TcPoSnqpbHq53BUh4MsA' \
@@ -201,7 +208,7 @@ Response-{
     "updated_at": "2025-10-03T14:09:11.991366Z"
 }
 
-6- Delete Task Viewset
+6- Delete Task Viewset API
 curl --location --request DELETE 'http://127.0.0.1:8000/api/task/1/' \
 --header 'Content-Type: application/json' \
 --header 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzU5NjM4NjUwLCJpYXQiOjE3NTk2MzUwNTAsImp0aSI6IjI1MzA2NTkxOTQ3MjRkYjJhNGMyOWE0NzI3N2FmZGQ2IiwidXNlcl9pZCI6IjUifQ.DXCDm9Pvka9XKjrpWEXu8o8TcPoSnqpbHq53BUh4MsA' \
@@ -216,7 +223,11 @@ Response-{
 
 
 
-I have also writtetn custom User API
+### Custom API (APIView-based Endpoints)
+These endpoints are implemented manually using APIView. 
+They allow finer control over request handling, permissions, and custom logic.
+For example, in this project the DELETE operation is restricted to Admin users 
+and filtering by query parameters (?completed=true/false) is handled explicitly here.
 
 
 1-List Task Custom API
@@ -376,7 +387,9 @@ This project is licensed under the MIT License
 
 ** Author **
 Vaibhav Anand
-GitHub Profile
+[Visit GitHub](https://github.com/Vaibhav-026)
+Contact-9450694571
+
 
 
 
